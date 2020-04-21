@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 interface ContainerProps {
   size?: 'small' | 'large';
@@ -17,18 +18,26 @@ export const Container = styled.div<ContainerProps>`
     justify-content: space-between;
 
     nav {
+      display: flex;
       a {
         color: #fff;
         text-decoration: none;
         font-size: 16px;
         transition: opacity 0.2s;
+        padding: 5px;
+
+        /*
+        box-shadow: 0 5px 0 #dd5522;
+
+        */
 
         & + a {
           margin-left: 32px;
         }
 
         &:hover {
-          opacity: 0.6;
+          color: ${shade(0.2, '#FFF')};
+          box-shadow: 0 2px 0 #dd5522;
         }
       }
     }
